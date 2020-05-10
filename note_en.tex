@@ -11,7 +11,9 @@
 	includefoot=true]{geometry}
 
 \usepackage{./lib/notes}
-
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{float}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Basic Info
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -134,6 +136,14 @@ clickable in the PDF because of the packages we've included.
 \end{figure}
 %% %---------------------------
 
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[GMM init]{\includegraphics[width=0.4\linewidth]{./assets/img/gmm_init.png}}
+	\subfloat[GMM likehood]{\includegraphics[width=0.4\linewidth]{./assets/img/gmm_like.png}}\\
+	\subfloat[GMM ans]{\includegraphics[width=0.8\linewidth]{./assets/img/gmm_ans.png}}
+	\caption{GMM}
+	\label{fig:gmm}
+\end{figure}
 
 Here's a typical reference to a floating figure:
 Figure~\ref{fig:vectors}. Floats should usually be placed where latex
@@ -197,7 +207,7 @@ section.
 %-------------------------------------------------------------------------------
 \begin{appendices}
 \section{Some Codes}
-some text...
+some text
 \section{Codes}
 \lstinputlisting[language=Python]{./assets/files/week5.py}
 \end{appendices}
