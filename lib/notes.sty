@@ -1,10 +1,11 @@
 % frontpage
-\newcommand{\frontpage}{\include{lib/frontpage}}
+%\newcommand{\frontpage}{\include{lib/frontpage}}
+\newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
 
-\def \title#1{\gdef\@title{#1}\gdef\theTitle{#1}}
-\def \subtitle#1{\gdef\@subtitle{#1}\gdef\theSubtitle{#1}}
-\def \author#1{\gdef\@author{#1}\gdef\theAuthor{#1}}
-\def \date#1{\gdef\@date{#1}\gdef\theDate{#1}}
+% \def \title#1{\gdef\@title{#1}\gdef\theTitle{#1}}
+% \def \subtitle#1{\gdef\@subtitle{#1}\gdef\theSubtitle{#1}}
+% \def \author#1{\gdef\@author{#1}\gdef\theAuthor{#1}}
+% \def \date#1{\gdef\@date{#1}\gdef\theDate{#1}}
 
 \usepackage{lipsum}
 % to be able to draw some self-contained figs
@@ -77,6 +78,84 @@
 	\usepackage{breakurl}       % break too-long urls in refs
 \fi
 
+\if@titlepage
+\def\maketitle{%
+
+\newgeometry{left=6cm}
+
+\begin{titlepage}
+	\let\footnotesize\small
+	\let\footnoterule\relax
+	\let \footnote \thanks
+
+	\begin{flushleft}
+		\noindent
+		\\[-1em]
+		\color[HTML]{5F5F5F}
+		\makebox[0pt][l]{\colorRule[360049]{1.3\textwidth}{4pt}}
+		\par
+		\noindent{%
+			\setstretch{1.4}
+			\vfill
+			\noindent{%
+				\Huge\bf
+				\textsf{\@title}
+			}
+			\vskip 2em
+			\noindent{%
+				\large\it
+				\textsf{%
+					\lineskip .5em
+                    \begin{tabular}[t]{c}
+						\@author
+					\end{tabular}
+				}
+			}
+			\vfill
+		}
+
+		\textsf{\@date}
+	\end{flushleft}
+\end{titlepage}
+
+\restoregeometry
+
+\begin{titlepage}%
+\let\footnotesize\small
+\let\footnoterule\relax
+\let \footnote \thanks
+
+% 	\null\vfil
+% 	\vskip 60\p@
+% 	\begin{center}%
+% 		{\LARGE \@title \par}%
+% 		\vskip 3em%
+% 		{\large
+% 			\lineskip .75em%
+% 			\begin{tabular}[t]{c}%
+% 				\@author
+% 			\end{tabular}\par}%
+% 			\vskip 1.5em%
+% 		{\large \@date \par}%       % Set date in \large size.
+% 	\end{center}\par
+% 	\@thanks
+% 	\vfil\null
+
+\end{titlepage}%
+
+	\setcounter{footnote}{0}%
+	\global\let\thanks\relax
+	\global\let\maketitle\relax
+	\global\let\@thanks\@empty
+	\global\let\@author\@empty
+	\global\let\@date\@empty
+	\global\let\@title\@empty
+	\global\let\title\relax
+	\global\let\author\relax
+	\global\let\date\relax
+	\global\let\and\relax
+}
+\else
 \def\maketitle{%
 	\par
 
@@ -97,9 +176,9 @@
 
 	\@thanks
 
- 	\endgroup
+	\endgroup
 
- 	\setcounter{footnote}{0}%
+	\setcounter{footnote}{0}%
 	\let\maketitle\relax
 	\let\@maketitle\relax
 	\gdef\@thanks{}
@@ -107,7 +186,6 @@
 	\gdef\@title{}
 	\let\thanks\relax
 }
-
 \def\@maketitle{%
 	\newpage
 	\vbox to 2.5in{%
@@ -127,10 +205,17 @@
 		\end{center}%
 		\par
 	\vspace*{\fill}
-	% \vskip 1.5em
+	\vskip 1.5em
 	}
 }
+\fi
+
 \ifxetex
+%
+% Main section titles are flushlefted.
+%
+\def\CTEX@section@format{\Large\bfseries}
+
 \else
 %
 % The abstract is preceded by a 12-pt bold centered heading
