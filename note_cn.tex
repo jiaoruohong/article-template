@@ -32,10 +32,22 @@
 % \parbox[b][\paperheight]{\paperwidth}{%
 % \vfill
 % \centering
-% {\transparent{0.8} \includegraphics[width=\paperwidth,height=\paperheight,%
-% keepaspectratio]{./assets/img/boat_coast_aerial_view_175780_1440x2560.jpg}}%
+% {\transparent{0.8} \includegraphics[%
+% width=\paperwidth,%
+% height=\paperheight,%
+% keepaspectratio]{%
+% ./assets/img/boat_coast_aerial_view_175780_1440x2560.jpg}}%
 % \vfill
 % }}}
+
+% \usepackage{afterpage}
+% \newcommand\blankpage{%
+% \null
+% \thispagestyle{empty}
+% \addtocounter{page}{-1}
+% \newpage
+% }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Basic Info
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
