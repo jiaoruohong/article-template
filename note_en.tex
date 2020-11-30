@@ -24,29 +24,6 @@
 \usepackage{tikz}
 \usepackage{xcolor}
 
-\usepackage{transparent}
-\usepackage{eso-pic}
-\newcommand{\BackgroundPic}[1]{%
-\put(0,0){%
-\parbox[b][\paperheight]{\paperwidth}{%
-\vfill
-\centering
-{\transparent{0.8} \includegraphics[%
-width=\paperwidth,%
-%height=\paperheight,%
-keepaspectratio]{%
-#1}}%
-\vfill
-}}}
-
-\usepackage{afterpage}
-\newcommand\blankpage{%
-\null
-\thispagestyle{empty}
-\addtocounter{page}{-1}
-\newpage
-}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Basic Info
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,7 +52,8 @@ keepaspectratio]{%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \AddToShipoutPicture*{\BackgroundPic}
+% \AddToShipoutPicture*{\BackgroundPic{path2pic}}
+% \blankpage
 
 \maketitle
 
