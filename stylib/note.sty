@@ -34,33 +34,6 @@
 % codes
 \usepackage{listings}
 
-% set background picture
-\usepackage{transparent}
-\usepackage{eso-pic}
-
-\newcommand{\BackgroundPic}[1]{%
-\put(0,0){%
-\parbox[b][\paperheight]{\paperwidth}{%
-\vfill
-\centering
-{\transparent{0.8} \includegraphics[%
-width=\paperwidth,%
-%height=\paperheight,%
-keepaspectratio]{%
-#1}}%
-\vfill
-}}}
-
-% set blankpage
-\usepackage{afterpage}
-
-\newcommand\blankpage{
-    \null
-    \thispagestyle{empty}
-    \addtocounter{page}{-1}
-    \newpage
-}
-
 % hopefully embeds all fonts in pdf
 \ifxetex % xelatex
 	\usepackage{xltxtra,fontspec,xunicode}

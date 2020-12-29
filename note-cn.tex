@@ -1,53 +1,14 @@
-% \documentclass[a4paper,10pt]{article}
-\documentclass[a4paper,10pt,titlepage]{article}
-% \documentclass[a4paper,10pt,twocolumn]{article}
-% \documentclass[a4paper,10pt,twocolumn,titlepage]{article}
+% \documentclass[10pt]{ctexart}
+\documentclass[10pt,titlepage]{ctexart}
+% \documentclass[10pt,twocolumn]{ctexart}
+% \documentclass[10pt,twocolumn,titlepage]{ctexart}
 
-\usepackage[
-	top=1cm,
-	bottom=1cm,
-	left=2cm,
-	right=2cm,
-%   twoside,
-%   bindingoffset=1cm,
-%   asymmetric,
-	headheight=0.5cm,
-	headsep=0cm,
-	footskip=0.5cm,
-	includehead=true,
-	includefoot=true]{geometry}
+\usepackage{./stylib/Page-Layout}
+\usepackage{./stylib/Sty-Pkg-cn}
+\usepackage{./stylib/Self-Command-cn}
+\usepackage{./stylib/note}
 
-\usepackage{./stylib/notes}
-\usepackage{graphicx}
-\usepackage{subfig}
-\usepackage{float}
-\usepackage{tikz}
-\usepackage{xcolor}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Basic Info
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{\Large\bf Formatting Submissions for a USENIX Conference:\\
-	An (Incomplete) Example\\
-	\hologo{pdfLaTeX}
-}
-\author{%
-    {\rm Ruohong~Jiao}\\
-	First Institution
-	\and
-	{\rm Second~Name}\\
-	Second Institution
-	\and
-	{\rm Third~Name}\\
-	Third Institution
-	\and
-	{\rm Fourth~Name}\\
-	Fourth Institution
-	\and
-	{\rm Fifth~Name}\\
-	Fifth Institution
-}
-\date{2020-03-28}
+\input{./part/fm-cn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -69,13 +30,21 @@ Not more than 200 words, if possible, and preferably closer to 150.
 %\newpage
 
 %-------------------------------------------------------------------------------
-\section{Introduction}
+\section{引言}
 %-------------------------------------------------------------------------------
-Some of the \textbf{greatest}\par
-discoveries in \underline{science}\par
-were made by \textbf{\textit{accident}}.\par
+Some of the \textbf{greatest排版引擎}\par
+discoveries in \underline{science排版引擎}\par
+were made by \textbf{\textit{accident排版引擎}}.\par
+
+\XeTeX{}是一种使用Unicode的\TeX{}排版引擎，并支持一些现代字体技术，
+例如 OpenType、Graphite 和 Apple Advanced Typography（AAT）, 可以直接利用其
+高级特性，例如额外的字形，花体，合字，可变的文本粗细等等。\par
 
 \lipsum[1]
+
+\section{关于数学部分}
+数学、中英文皆可以混排。You can intersperse math, Chinese and English 
+(Latin script) without adding extra environments.
 
 %-------------------------------------------------------------------------------
 \section{Footnotes, Verbatim, and Citations}
@@ -223,16 +192,16 @@ some text
 \lstinputlisting[language=Python, firstline=1, lastline=8]{./assets/file/week5.py}
 \begin{lstlisting}[language=Python]
 import numpy as np
-    
+
 def incmatrix(genl1,genl2):
     m = len(genl1)
     n = len(genl2)
     M = None #to become the incidence matrix
     VT = np.zeros((n*m,1), int)  #dummy variable
-    
+
     #compute the bitwise xor matrix
     M1 = bitxormatrix(genl1)
-    M2 = np.triu(bitxormatrix(genl2),1) 
+    M2 = np.triu(bitxormatrix(genl2),1)
 
     for i in range(m-1):
         for j in range(i+1, m):
@@ -242,14 +211,14 @@ def incmatrix(genl1,genl2):
                 VT[(i)*n + c[k]] = 1;
                 VT[(j)*n + r[k]] = 1;
                 VT[(j)*n + c[k]] = 1;
-                
+
                 if M is None:
                     M = np.copy(VT)
                 else:
                     M = np.concatenate((M, VT), 1)
-                
+
                 VT = np.zeros((n*m,1), int)
-    
+
     return M
 \end{lstlisting}
 \end{appendices}
