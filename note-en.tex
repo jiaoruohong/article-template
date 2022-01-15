@@ -1,12 +1,10 @@
-% \documentclass[10pt]{article}
-\documentclass[10pt,titlepage]{article}
-% \documentclass[10pt,twocolumn]{article}
-% \documentclass[10pt,twocolumn,titlepage]{article}
+\documentclass[10pt,twoside]{article}
+% \documentclass[10pt,twoside,twocolumn]{article}
 
 \usepackage{./stylib/Page-Layout}
 \usepackage{./stylib/Sty-Pkg}
-\usepackage{./stylib/Self-Command}
 \usepackage{./stylib/note}
+\usepackage{./stylib/Self-Command}
 
 \input{./part/fm}
 
@@ -24,10 +22,7 @@
 Your abstract text goes here. Just a few facts. Whet our appetites.
 Not more than 200 words, if possible, and preferably closer to 150.
 \end{abstract}
-%\newpage
-
-%\tableofcontents
-%\newpage
+% \newpage
 
 %-------------------------------------------------------------------------------
 \section{Introduction}
@@ -44,8 +39,8 @@ were made by \textbf{\textit{accident}}.\par
 
 Footnotes should be places after punctuation characters, without any
 spaces between said characters and footnotes, like so.%
-\footnote{Remember that USENIX format stopped using endnotes and is
-  now using regular footnotes.} And some embedded literal code may
+\footnote{Remember that USENIX format stopped using endnotes and is now using regular footnotes.} 
+And some embedded literal code may
 look as follows.
 
 \begin{verbatim}
@@ -172,14 +167,16 @@ backed by artifacts that are publicly available. If you made your code
 or data available, it's worth mentioning this fact in a dedicated
 section.
 
-%-------------------------------------------------------------------------------
-\bibliographystyle{plain}
-\bibliography{./bib/reference}
+% %-------------------------------------------------------------------------------
+% \bibliographystyle{plain}
+% \bibliography{./bib/reference}
 
 %-------------------------------------------------------------------------------
-\begin{appendices}
+\appendices
+
 \section{Some Codes}
 some text
+
 \section{Codes}
 \lstinputlisting[language=Python, firstline=1, lastline=8]{./assets/file/week5.py}
 \begin{lstlisting}[language=Python]
@@ -213,7 +210,12 @@ def incmatrix(genl1,genl2):
     
     return M
 \end{lstlisting}
-\end{appendices}
+
+\input{./part/color-palette.tex}
+
+%-------------------------------------------------------------------------------
+\bibliographystyle{plain}
+\bibliography{./bib/reference}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}

@@ -12,7 +12,21 @@
 %     bindingoffset=1cm,
 %     asymmetric,
 	headheight=0.5cm,
-	headsep=0cm,
-	footskip=0.5cm,
+	headsep=0.5cm,
+	footskip=1.0cm,
 	includehead=true,
 	includefoot=true]{geometry}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1pt}
+% \fancyhead[C]{\textcolor{blue}{\rule{1.0\textwidth}{3pt}}}
+%
+% \fancyfoot[C]{%
+% \begin{tikzpicture}[remember picture,overlay]
+%     \node[anchor=south east, yshift=-3.55pt, xshift=3.535pt] at (current page.south east) {\textcolor[HTML]{040653}{\rule{1.0\paperwidth}{6pt}}};
+% \end{tikzpicture}
+% }

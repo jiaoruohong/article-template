@@ -68,12 +68,13 @@
 \usepackage{xcolor}             % color definitions, to be use for...
 \usepackage[]{hyperref}         % ...clickable refs within pdf...
 \hypersetup{%
+  breaklinks=true,
   colorlinks,
-%   linkcolor={green!80!black},
   linkbordercolor=white,
   pdfborder={0 0 0},
   citebordercolor=white,
   bookmarksopen=false,
+  linkcolor={green!80!black},
   citecolor={red!70!black},
   urlcolor={blue!70!black}
 }
@@ -85,8 +86,7 @@
 \if@titlepage
 \def\maketitle{%
 
-\newgeometry{left=6cm}
-
+\newgeometry{left=4cm}
 \begin{titlepage}
 	\let\footnotesize\small
 	\let\footnoterule\relax
@@ -96,12 +96,13 @@
 		\noindent
 		\\[-1em]
 		\color[HTML]{5F5F5F}
-		\makebox[0pt][l]{\colorRule[360049]{1.3\textwidth}{4pt}}
+		\makebox[0pt][l]{\colorRule[040653]{1.0\paperwidth}{4pt}}
 		\par
 		\noindent{%
 			\setstretch{1.4}
 			\vfill
 			\noindent{%
+                % \fontsize{50pt}{50pt}\selectfont
 				\Huge\bf
 				\textsf{\@title}
 			}
@@ -121,33 +122,10 @@
 		\textsf{\@date}
 	\end{flushleft}
 \end{titlepage}
-
 \restoregeometry
 
-\begin{titlepage}%
-\let\footnotesize\small
-\let\footnoterule\relax
-\let \footnote \thanks
-
-% 	\null\vfil
-% 	\vskip 60\p@
-% 	\begin{center}%
-% 		{\LARGE \@title \par}%
-% 		\vskip 3em%
-% 		{\large
-% 			\lineskip .75em%
-% 			\begin{tabular}[t]{c}%
-% 				\@author
-% 			\end{tabular}\par}%
-% 			\vskip 1.5em%
-% 		{\large \@date \par}%       % Set date in \large size.
-% 	\end{center}\par
-% 	\@thanks
-% 	\vfil\null
-
-\end{titlepage}%
-
 	\setcounter{footnote}{0}%
+    \setcounter{page}{1}
 	\global\let\thanks\relax
 	\global\let\maketitle\relax
 	\global\let\@thanks\@empty

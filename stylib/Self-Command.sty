@@ -32,3 +32,24 @@ keepaspectratio]{%
     \newpage
 }
 
+% Set Running Footer
+%------------------------------------------------------------------------------
+\newcommand\runningfooter[2]{
+\fancyfoot[LE]{#1} \fancyfoot[RE]{#2 \hspace{1em} \thepage}
+\fancyfoot[LO]{\thepage \hspace{1em} #2} \fancyfoot[RO]{#1}
+}
+
+% Color Bar (HTML)
+%------------------------------------------------------------------------------
+\newcommand\colorbar[3]{
+\textcolor[HTML]{#1}{\rule{#2}{#3}}
+}
+
+% Color Palette (HTML)
+%------------------------------------------------------------------------------
+\newcommand\cp[1]{
+\textcolor[HTML]{#1}{\rule{10pt}{10pt}}\hspace{5pt}#1
+}
+\newcommand\csep{
+\hspace{1pt}
+}

@@ -1,7 +1,5 @@
-% \documentclass[10pt]{ctexart}
-\documentclass[10pt,titlepage]{ctexart}
-% \documentclass[10pt,twocolumn]{ctexart}
-% \documentclass[10pt,twocolumn,titlepage]{ctexart}
+\documentclass[10pt,twoside]{ctexart}
+% \documentclass[10pt,twoside,twocolumn]{ctexart}
 
 \usepackage{./stylib/Page-Layout}
 \usepackage{./stylib/Sty-Pkg}
@@ -24,9 +22,6 @@
 Your abstract text goes here. Just a few facts. Whet our appetites.
 Not more than 200 words, if possible, and preferably closer to 150.
 \end{abstract}
-%\newpage
-
-%\tableofcontents
 %\newpage
 
 %-------------------------------------------------------------------------------
@@ -180,14 +175,14 @@ backed by artifacts that are publicly available. If you made your code
 or data available, it's worth mentioning this fact in a dedicated
 section.
 
-%-------------------------------------------------------------------------------
-\bibliographystyle{plain}
-\bibliography{./bib/reference}
+
 
 %-------------------------------------------------------------------------------
-\begin{appendices}
+\appendices
+
 \section{Some Codes}
 some text
+
 \section{Codes}
 \lstinputlisting[language=Python, firstline=1, lastline=8]{./assets/file/week5.py}
 \begin{lstlisting}[language=Python]
@@ -221,7 +216,12 @@ def incmatrix(genl1,genl2):
 
     return M
 \end{lstlisting}
-\end{appendices}
+
+\input{./part/color-palette.tex}
+
+%-------------------------------------------------------------------------------
+\bibliographystyle{plain}
+\bibliography{./bib/reference}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
