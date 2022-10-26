@@ -1,0 +1,44 @@
+\PassOptionsToPackage{table}{xcolor}
+\documentclass[10pt,twoside]{article}
+% \documentclass[10pt,twoside,twocolumn]{article}
+
+\usepackage{./stylib/article}
+
+%-------------------------------------------------------------------------------
+\rinput{./contents/info.tex}
+\rinput{./contents/importpkt.tex}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{mdframed}
+%-------------------------------------------------------------------------------
+\begin{abstract}
+%-------------------------------------------------------------------------------
+Your abstract text goes here. Just a few facts. Whet our appetites.
+Not more than 200 words, if possible, and preferably closer to 150.
+\end{abstract}
+\end{mdframed}
+
+%-------------------------------------------------------------------------------
+% \pagenumbering{roman}{%
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{2}
+\tableofcontents
+% }
+% \clearpage
+
+%-------------------------------------------------------------------------------
+% \pagenumbering{arabic}
+% \setcounter{page}{1}
+
+\rinput{contents/example/en.tex}
+
+% %-------------------------------------------------------------------------------
+\bibliographystyle{plain}
+\rbibliography{./bib/reference}
+
+%-------------------------------------------------------------------------------
+\end{document}
